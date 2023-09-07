@@ -1,0 +1,21 @@
+:root {
+  --dvh: 100vh;
+}
+
+:root[data-theme="light"] {
+  //   // PALETTE //
+  --background: #{$light};
+  --text-primary: #{$dark};
+  --background-secondary: #{$cream};
+  --dtl: #{$dark};
+  --ltd: #{$light};
+}
+
+:root[data-theme="dark"] {
+  // PALETTE //
+  --background: #{$dark};
+  --text-primary: #{$light};
+  --background-secondary: #{$vintage-green};
+  --dtl: #{$light};
+  --ltd: #{$dark};
+}

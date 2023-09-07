@@ -1,0 +1,39 @@
+{
+  "recommendations": [
+    //Autocomplete
+    "Atishay-Jain.All-Autocomplete",
+
+    //EditorConfig
+    "editorconfig.editorconfig",
+
+    //ESLint
+    "dbaeumer.vscode-eslint",
+
+    //Prettier
+    "esbenp.prettier-vscode",
+    "rvest.vs-code-prettier-eslint",
+
+    //Stylelint-plus
+    "hex-ci.stylelint-plus",
+
+    //SVG formatter
+    "jock.svg",
+
+    //SVG previewer
+    "vitaliymaz.vscode-svg-previewer",
+
+    //Intellisence
+    "christian-kohler.path-intellisense",
+    "mrmlnc.vscode-scss",
+
+    //MultiCommand
+    "ryuta46.multi-command",
+
+    //Git-graph
+    "mhutchie.git-graph",
+
+    //Icons and Theme
+    "tal7aouy.icons",
+    "azemoh.one-monokai"
+  ]
+}

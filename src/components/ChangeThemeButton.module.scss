@@ -1,0 +1,54 @@
+.switch {
+  $toggler-height: 30px;
+
+  display: flex;
+  align-items: center;
+  color: var(--ltd);
+  transition: color $transition-duration;
+
+  & .toggler {
+    position: relative;
+
+    overflow: hidden;
+
+    width: $toggler-height * 2;
+    height: $toggler-height;
+
+    background-color: var(--ltd);
+    border-radius: 5000px;
+
+    transition: background-color $transition-duration;
+  }
+
+  & .pin {
+    position: absolute;
+    z-index: 100;
+    top: 50%;
+    left: calc($toggler-height / 2);
+    transform: translate(-50%, -50%) rotate(0);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: $toggler-height - 5px;
+    height: $toggler-height - 5px;
+
+    background-color: var(--dtl);
+    border-radius: 5000px;
+
+    transition:
+      background-color $transition-duration,
+      left $transition-duration * 1.2 cubic-bezier(0, 2, 0.75, 2),
+      transform $transition-duration * 1.2 cubic-bezier(0, 2, 0.75, 2);
+  }
+
+  &.dark .pin {
+    left: calc($toggler-height + $toggler-height / 2);
+    transform: translate(-50%, -50%) rotate(360deg * 2);
+  }
+
+  & .icon {
+    padding: 5px;
+  }
+}
