@@ -1,5 +1,6 @@
 {
   "editor.minimap.enabled": false,
+  "editor.tabSize": 2,
   "css.validate": false,
   "less.validate": false,
   "stylelint.useLocal": true,
@@ -32,8 +33,13 @@
   "explorer.fileNesting.patterns": {
     "*.jsx": "${capture}.js, ${capture}.module.css, ${capture}.module.scss",
     "*.tsx": "${capture}.ts, ${capture}.module.css, ${capture}.module.scss",
+    "index.jsx": "*.module.css, *.module.scss, data.ts",
+    "index.tsx": "*.module.css, *.module.scss, data.ts",
+    "page.jsx": "data.ts",
+    "page.tsx": "data.ts",
+    "index.svg.ts": "*.svg",
     "store.ts": "*.slice.ts",
-    "package.json": "pocketbase.exe, .editorconfig, .eslintignore, .eslintrc, .eslintrc.json, .eslintrc.yml, .gitattributes, .gitignore, .prettierignore, .prettierrc, .stylelintignore, .stylelintrc, Contributing.md, next-env.d.ts, next.config.js, package-lock.json, Readme.md, requirements.md, tsconfig.json, webpack.config.js"
+    "package.json": ".env.local, yarn.lock, tailwind.config.js, postcss.config.js, .lintstagedrc.yml, .ncurc.json, .prettierrc.json, .env.production, .env.development, .env ,pocketbase.exe, .editorconfig, .eslintignore, .eslintrc, .eslintrc.json, .eslintrc.yml, .gitattributes, .gitignore, .prettierignore, .prettierrc, .stylelintignore, .stylelintrc, Contributing.md, next-env.d.ts, next.config.js, package-lock.json, Readme.md, requirements.md, tsconfig.json, webpack.config.js"
   },
   "workbench.iconTheme": "icons",
   "emmet.includeLanguages": {
@@ -55,7 +61,7 @@
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "editor.detectIndentation": false,
   "editor.guides.bracketPairs": true,
-  "editor.insertSpaces": false,
+  "editor.insertSpaces": true,
   "editor.linkedEditing": true,
   "editor.renderWhitespace": "selection",
   "editor.wordWrap": "on",
@@ -68,7 +74,7 @@
   "html.format.maxPreserveNewLines": 1,
   "html.format.wrapLineLength": 0,
 
-  "svg.preview.boundingBox": true,
-  "svg.preview.transparencyGrid": true,
-  "svg.preview.autoOpen": true
+  "color-highlight.markerBackground": "#ffffff",
+  "color-highlight.languagesHighlightNamedColors": [],
+  "typescript.tsdk": "node_modules\\typescript\\lib"
 }

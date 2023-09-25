@@ -1,11 +1,13 @@
 'use client';
 
+// main styles
+import '@/styles/index.scss';
+//
 import SpinnerComponent from '@/components/SpinnerComponent';
 import calculateDocumentHeight from '@/utils/CalculateDocumentHeight';
 import localFont from 'next/font/local';
-import { useEffect, useState } from 'react';
+import { StrictMode, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import '../styles/index.scss';
 import { useAppSelector } from './store';
 import { setTheme } from './theme.slice';
 
@@ -22,7 +24,6 @@ function HtmlProvider({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState(true);
   const dispatch = useDispatch();
   const currentTheme = useAppSelector((state) => state.theme.theme);
-
   useEffect(() => {
     // Create dvh variable
     calculateDocumentHeight();
@@ -36,13 +37,14 @@ function HtmlProvider({ children }: { children: React.ReactNode }) {
     // Set isLoading to false
     setIsLoading(false);
   }, [dispatch]);
-
   return (
-    <html lang="en" className={EestiFont.variable} data-theme={currentTheme}>
-      <body className={isLoading ? 'no-transition' : ''}>
-        {isLoading ? <SpinnerComponent /> : children}
-      </body>
-    </html>
+    <StrictMode>
+      <html lang="en" className={EestiFont.variable} data-theme={currentTheme}>
+        <body className={isLoading ? 'no-transition' : ''}>
+          {isLoading ? <SpinnerComponent /> : children}
+        </body>
+      </html>
+    </StrictMode>
   );
 }
 

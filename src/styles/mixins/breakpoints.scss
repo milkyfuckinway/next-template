@@ -1,23 +1,43 @@
-@mixin vp-1919 {
-  @media (max-width: $vp-1920) {
+// Breakpoints
+// $xs: 375px;
+// $sm: 576px;
+// $md: 768px;
+// $lg: 998px;
+// $xl: 1200px;
+// $xxl: 1400px;
+
+// @mixin vp-xxl {
+//   @media (max-width: $xxl) {
+//     @content;
+//   }
+// }
+
+// @mixin vp-xl {
+//   @media (max-width: $xl) {
+//     @content;
+//   }
+// }
+
+// @mixin vp-lg {
+//   @media (max-width: $lg) {
+//     @content;
+//   }
+// }
+
+@mixin vp-md {
+  @media (max-width: $md) {
     @content;
   }
 }
 
-@mixin vp-1439 {
-  @media (max-width: $vp-1440) {
-    @content;
-  }
-}
+// @mixin vp-sm {
+//   @media (max-width: $sm) {
+//     @content;
+//   }
+// }
 
-@mixin vp-1023 {
-  @media (max-width: $vp-1024) {
-    @content;
-  }
-}
-
-@mixin vp-767 {
-  @media (max-width: $vp-768) {
-    @content;
-  }
-}
+// @mixin vp-xs {
+//   @media (max-width: $xs) {
+//     @content;
+//   }
+// }

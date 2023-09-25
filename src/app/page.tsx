@@ -1,12 +1,11 @@
-import TypingComponent from '@/components/TypingComponent';
+import clsx from 'clsx';
+import styles from './page.module.scss';
 
 export default function Home() {
   return (
-    <section className="section">
-      <div className="container">
-        <h2>
-          <TypingComponent sequence={['Main page', 1000, 'Главная страница', 1000]} />
-        </h2>
+    <section className={clsx('section', styles.section)}>
+      <div className={clsx('container', styles.container)}>
+        <h2>Главная</h2>
       </div>
     </section>
   );

@@ -6,6 +6,13 @@
     "color-function-notation": "modern",
     "selector-class-pattern": "^([a-z]+[\\-_a-z0-9]*[^\\-]|[a-z]+)$",
     "alpha-value-notation": "number",
-    "media-feature-range-notation": "prefix"
+    "media-feature-range-notation": "prefix",
+    "hue-degree-notation": "number",
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global"]
+      }
+    ]
   }
 }

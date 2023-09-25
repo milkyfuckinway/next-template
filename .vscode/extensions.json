@@ -19,9 +19,6 @@
     //SVG formatter
     "jock.svg",
 
-    //SVG previewer
-    "vitaliymaz.vscode-svg-previewer",
-
     //Intellisence
     "christian-kohler.path-intellisense",
     "mrmlnc.vscode-scss",

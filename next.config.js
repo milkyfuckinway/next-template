@@ -3,12 +3,16 @@
 const path = require('path');
 
 const nextConfig = {
-  output: 'export',
-  trailingSlash: true,
-  basePath: '/next-template',
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
     prependData: `@import "./src/styles/variables.scss"; @import "./src/styles/mixins.scss";`,
+  },
+  images: {
+    domains: ['firebasestorage.googleapis.com'],
+    unoptimized: true,
+    dangerouslyAllowSVG: true,
+    contentDispositionType: 'attachment',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   webpack: (config) => {
     config.module.rules.push({

@@ -1,28 +1,39 @@
 .switch {
   $toggler-height: 30px;
 
+  overflow: hidden;
   display: flex;
+  flex-shrink: 0;
   align-items: center;
-  color: var(--ltd);
-  transition: color $transition-duration;
+
+  color: var(--theme-icon);
+
+  transition: color $td;
 
   & .toggler {
     position: relative;
+    z-index: 0;
 
     overflow: hidden;
 
     width: $toggler-height * 2;
     height: $toggler-height;
 
-    background-color: var(--ltd);
+    background-color: var(--theme-switch-background);
     border-radius: 5000px;
 
-    transition: background-color $transition-duration;
+    transition: background-color $td;
+  }
+
+  & .background-icon {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
   }
 
   & .pin {
     position: absolute;
-    z-index: 100;
     top: 50%;
     left: calc($toggler-height / 2);
     transform: translate(-50%, -50%) rotate(0);
@@ -34,21 +45,21 @@
     width: $toggler-height - 5px;
     height: $toggler-height - 5px;
 
-    background-color: var(--dtl);
-    border-radius: 5000px;
+    background-color: var(--theme-icon-background);
+    border-radius: 100%;
 
     transition:
-      background-color $transition-duration,
-      left $transition-duration * 1.2 cubic-bezier(0, 2, 0.75, 2),
-      transform $transition-duration * 1.2 cubic-bezier(0, 2, 0.75, 2);
+      background-color $td,
+      left $td,
+      transform $td;
   }
 
   &.dark .pin {
     left: calc($toggler-height + $toggler-height / 2);
-    transform: translate(-50%, -50%) rotate(360deg * 2);
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 
   & .icon {
-    padding: 5px;
+    width: calc(100% - 10px);
   }
 }
