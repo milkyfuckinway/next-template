@@ -9,8 +9,8 @@ const initialState = {
 } as InitialState;
 
 const themeSlice = createSlice({
-  name: 'theme',
   initialState,
+  name: 'theme',
   reducers: {
     setTheme(state, action: PayloadAction<string>) {
       state.theme = action.payload;
@@ -22,6 +22,6 @@ const themeSlice = createSlice({
   },
 });
 
-export const { toggle, setTheme } = themeSlice.actions;
+export const { setTheme, toggle } = themeSlice.actions;
 
 export default themeSlice.reducer;

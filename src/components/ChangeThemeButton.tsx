@@ -7,6 +7,7 @@ import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
+
 import styles from './ChangeThemeButton.module.scss';
 
 function ChangeThemeButton() {
@@ -20,28 +21,28 @@ function ChangeThemeButton() {
 
   const variants = {
     cloudFirst: {
-      visible: { x: 29, y: 0 },
       hidden: { x: 29, y: 50 },
+      visible: { x: 29, y: 0 },
     },
     cloudSecond: {
-      visible: { x: 28, y: 14 },
       hidden: { x: 28, y: 50 },
+      visible: { x: 28, y: 14 },
     },
     cloudThird: {
-      visible: { x: 39, y: 4 },
       hidden: { x: 39, y: 50 },
+      visible: { x: 39, y: 4 },
     },
     starFirst: {
-      visible: { x: 8, y: 2 },
       hidden: { x: 8, y: -50 },
+      visible: { x: 8, y: 2 },
     },
     starSecond: {
-      visible: { x: 12, y: 14 },
       hidden: { x: 12, y: -50 },
+      visible: { x: 12, y: 14 },
     },
     starThird: {
-      visible: { x: 18, y: 2 },
       hidden: { x: 18, y: -50 },
+      visible: { x: 18, y: 2 },
     },
   };
 
@@ -49,63 +50,63 @@ function ChangeThemeButton() {
     <button
       aria-label="Change theme."
       className={clsx(styles.switch, currentTheme === 'light' ? styles.light : styles.dark)}
-      type="button"
       onClick={() => dispatch(toggle())}
+      type="button"
     >
       <motion.div className={styles.toggler} transition={{ delayChildren: 2 }}>
         <motion.div
-          className={styles['background-icon']}
           animate={isLight ? 'visible' : 'hidden'}
-          variants={variants.cloudFirst}
+          className={styles['background-icon']}
           initial={false}
           transition={isLight ? { delay: 0.2 } : { delay: 0 }}
+          variants={variants.cloudFirst}
         >
-          <Clound width={10} fill="#fff" />
+          <Clound fill="#fff" width={10} />
         </motion.div>
         <motion.div
-          className={styles['background-icon']}
           animate={isLight ? 'visible' : 'hidden'}
-          variants={variants.cloudSecond}
+          className={styles['background-icon']}
           initial={false}
           transition={isLight ? { delay: 0.4 } : { delay: 0 }}
+          variants={variants.cloudSecond}
         >
-          <Clound width={14} fill="#fff" />
+          <Clound fill="#fff" width={14} />
         </motion.div>
         <motion.div
-          className={styles['background-icon']}
           animate={isLight ? 'visible' : 'hidden'}
-          variants={variants.cloudThird}
+          className={styles['background-icon']}
           initial={false}
           transition={isLight ? { delay: 0.6 } : { delay: 0 }}
+          variants={variants.cloudThird}
         >
-          <Clound width={18} fill="#fff" />
+          <Clound fill="#fff" width={18} />
         </motion.div>
         <motion.div
-          className={styles['background-icon']}
           animate={isLight ? 'hidden' : 'visible'}
-          variants={variants.starFirst}
+          className={styles['background-icon']}
           initial={false}
           transition={isLight ? { delay: 0 } : { delay: 0.2 }}
+          variants={variants.starFirst}
         >
-          <Star width={7} fill="#cdc6bd" />
+          <Star fill="#cdc6bd" width={7} />
         </motion.div>
         <motion.div
-          className={styles['background-icon']}
           animate={isLight ? 'hidden' : 'visible'}
-          variants={variants.starSecond}
+          className={styles['background-icon']}
           initial={false}
           transition={isLight ? { delay: 0 } : { delay: 0.4 }}
+          variants={variants.starSecond}
         >
-          <Star width={11} fill="#cdc6bd" />
+          <Star fill="#cdc6bd" width={11} />
         </motion.div>
         <motion.div
-          className={styles['background-icon']}
           animate={isLight ? 'hidden' : 'visible'}
-          variants={variants.starThird}
+          className={styles['background-icon']}
           initial={false}
           transition={isLight ? { delay: 0 } : { delay: 0.6 }}
+          variants={variants.starThird}
         >
-          <Star width={14} fill="#cdc6bd" />
+          <Star fill="#cdc6bd" width={14} />
         </motion.div>
         <div className={styles.pin}>
           {currentTheme === 'light' ? (

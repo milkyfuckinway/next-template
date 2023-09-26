@@ -31,6 +31,9 @@
 
     //Icons and Theme
     "tal7aouy.icons",
-    "azemoh.one-monokai"
+    "azemoh.one-monokai",
+
+    //Color highlight
+    "Yunduo.color-highlight-css-color-4"
   ]
 }

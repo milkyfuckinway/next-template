@@ -1,23 +1,22 @@
 'use client';
 
-// main styles
-import '@/styles/index.scss';
-//
 import SpinnerComponent from '@/components/SpinnerComponent';
+import '@/styles/index.scss';
 import calculateDocumentHeight from '@/utils/CalculateDocumentHeight';
 import localFont from 'next/font/local';
 import { StrictMode, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
+
 import { useAppSelector } from './store';
 import { setTheme } from './theme.slice';
 
 const EestiFont = localFont({
+  preload: true,
   src: [
     { path: '../fonts/GTEesti-400.woff2', weight: '400' },
     { path: '../fonts/GTEesti-700.woff2', weight: '700' },
   ],
   variable: '--eesti',
-  preload: true,
 });
 
 function HtmlProvider({ children }: { children: React.ReactNode }) {
@@ -39,7 +38,7 @@ function HtmlProvider({ children }: { children: React.ReactNode }) {
   }, [dispatch]);
   return (
     <StrictMode>
-      <html lang="en" className={EestiFont.variable} data-theme={currentTheme}>
+      <html className={EestiFont.variable} data-theme={currentTheme} lang="en">
         <body className={isLoading ? 'no-transition' : ''}>
           {isLoading ? <SpinnerComponent /> : children}
         </body>

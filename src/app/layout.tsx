@@ -1,11 +1,12 @@
-import HtmlProvider from '@/store/HtmlProvider';
-import ReduxProvider from '@/store/ReduxProvider';
-import Header from '@/components/base/Header';
 import type { Metadata } from 'next';
 
+import Header from '@/components/base/Header';
+import HtmlProvider from '@/store/HtmlProvider';
+import ReduxProvider from '@/store/ReduxProvider';
+
 export const metadata: Metadata = {
-  title: 'Next.js Template',
   description: 'Next.js Template',
+  title: 'Next.js Template',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

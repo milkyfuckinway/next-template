@@ -8,7 +8,8 @@
       "extends": [
         "airbnb-typescript",
         "plugin:@typescript-eslint/recommended",
-        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:perfectionist/recommended-natural"
       ],
 
       "parserOptions": {
@@ -20,7 +21,7 @@
       }
     }
   ],
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "perfectionist"],
   "rules": {
     // Allow to reassign props otherwise throw an error
     "no-param-reassign": ["error", { "props": false }],

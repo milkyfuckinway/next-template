@@ -2,6 +2,7 @@
 
 import clsx from 'clsx';
 import Link from 'next/link';
+
 import ChangeThemeButton from '../ChangeThemeButton';
 import styles from './Header.module.scss';
 
