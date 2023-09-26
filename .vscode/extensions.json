@@ -34,6 +34,9 @@
     "azemoh.one-monokai",
 
     //Color highlight
-    "Yunduo.color-highlight-css-color-4"
+    "Yunduo.color-highlight-css-color-4",
+
+    //Restart ts & eslint server bar
+    "acoreyj.restart-ts-eslint-server"
   ]
 }
