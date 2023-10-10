@@ -1,4 +1,9 @@
-/*
+// Resources
+// https://www.ncscolorguide.com/ncs/s-0300-s-0585
+// https://margaret2.github.io/pantone-colors/
+// https://www.pantone-colours.com/
+
+// Palettes
 
 // Pantone colors
 $pantone-bright-white: #f4f5f0;
@@ -16,13 +21,10 @@ $pantone-solar-power: #f4bf3a;
 
 $modded-pantone-phantom-darker: hsl(260 3% 14%);
 
-*/
-
 :root {
   --dvh: 100vh;
-}
 
-:root[data-theme="light"] {
+  // Palette
   --background-primary: #{$pantone-bright-white};
   --background-secondary: #{$pantone-bright-cobalt};
   --text-primary: #{$pantone-jet-black};

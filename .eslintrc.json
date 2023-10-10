@@ -17,12 +17,15 @@
         "ecmaVersion": "latest"
       },
       "rules": {
-        "@typescript-eslint/comma-dangle": "off"
+        "@typescript-eslint/comma-dangle": "off",
+        "@typescript-eslint/indent": "off"
       }
     }
   ],
   "plugins": ["@typescript-eslint", "perfectionist"],
   "rules": {
+    // Disable require deprecated default props
+    "react/require-default-props": "off",
     // Allow to reassign props otherwise throw an error
     "no-param-reassign": ["error", { "props": false }],
     // Only .tsx files for JSX
@@ -59,6 +62,12 @@
           "some": ["nesting", "id"]
         },
         "allowChildren": false
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
       }
     ]
   }
