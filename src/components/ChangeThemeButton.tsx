@@ -1,23 +1,26 @@
 'use client';
 
 import { Clound, MoonIcon, Star, SunIcon } from '@/assets/svg/index.svg';
-import { useAppSelector } from '@/store/store';
-import { toggle } from '@/store/theme.slice';
+import { calculateDocumentHeight } from '@/utils/helpers';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
+import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
 
 import styles from './ChangeThemeButton.module.scss';
 
 function ChangeThemeButton() {
-  const dispatch = useDispatch();
-  const currentTheme = useAppSelector((state) => state.theme.theme);
-  const [isLight, setIsLight] = useState(currentTheme === 'light');
+  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme, setTheme } = useTheme();
 
   useEffect(() => {
-    setIsLight(currentTheme === 'light');
-  }, [currentTheme]);
+    setMounted(true);
+    calculateDocumentHeight();
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   const variants = {
     cloudFirst: {
@@ -46,70 +49,74 @@ function ChangeThemeButton() {
     },
   };
 
+  const onClick = () => {
+    setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
+  };
+
   return (
     <button
       aria-label="Change theme."
-      className={clsx(styles.switch, currentTheme === 'light' ? styles.light : styles.dark)}
-      onClick={() => dispatch(toggle())}
+      className={clsx(styles.switch, resolvedTheme === 'light' ? styles.light : styles.dark)}
+      onClick={onClick}
       type="button"
     >
       <motion.div className={styles.toggler} transition={{ delayChildren: 2 }}>
         <motion.div
-          animate={isLight ? 'visible' : 'hidden'}
+          animate={resolvedTheme === 'light' ? 'visible' : 'hidden'}
           className={styles['background-icon']}
           initial={false}
-          transition={isLight ? { delay: 0.2 } : { delay: 0 }}
+          transition={resolvedTheme === 'light' ? { delay: 0.2 } : { delay: 0 }}
           variants={variants.cloudFirst}
         >
           <Clound fill="#fff" width={10} />
         </motion.div>
         <motion.div
-          animate={isLight ? 'visible' : 'hidden'}
+          animate={resolvedTheme === 'light' ? 'visible' : 'hidden'}
           className={styles['background-icon']}
           initial={false}
-          transition={isLight ? { delay: 0.4 } : { delay: 0 }}
+          transition={resolvedTheme === 'light' ? { delay: 0.4 } : { delay: 0 }}
           variants={variants.cloudSecond}
         >
           <Clound fill="#fff" width={14} />
         </motion.div>
         <motion.div
-          animate={isLight ? 'visible' : 'hidden'}
+          animate={resolvedTheme === 'light' ? 'visible' : 'hidden'}
           className={styles['background-icon']}
           initial={false}
-          transition={isLight ? { delay: 0.6 } : { delay: 0 }}
+          transition={resolvedTheme === 'light' ? { delay: 0.6 } : { delay: 0 }}
           variants={variants.cloudThird}
         >
           <Clound fill="#fff" width={18} />
         </motion.div>
         <motion.div
-          animate={isLight ? 'hidden' : 'visible'}
+          animate={resolvedTheme === 'light' ? 'hidden' : 'visible'}
           className={styles['background-icon']}
           initial={false}
-          transition={isLight ? { delay: 0 } : { delay: 0.2 }}
+          transition={resolvedTheme === 'light' ? { delay: 0 } : { delay: 0.2 }}
           variants={variants.starFirst}
         >
           <Star fill="#cdc6bd" width={7} />
         </motion.div>
         <motion.div
-          animate={isLight ? 'hidden' : 'visible'}
+          animate={resolvedTheme === 'light' ? 'hidden' : 'visible'}
           className={styles['background-icon']}
           initial={false}
-          transition={isLight ? { delay: 0 } : { delay: 0.4 }}
+          transition={resolvedTheme === 'light' ? { delay: 0 } : { delay: 0.4 }}
           variants={variants.starSecond}
         >
           <Star fill="#cdc6bd" width={11} />
         </motion.div>
         <motion.div
-          animate={isLight ? 'hidden' : 'visible'}
+          animate={resolvedTheme === 'light' ? 'hidden' : 'visible'}
           className={styles['background-icon']}
           initial={false}
-          transition={isLight ? { delay: 0 } : { delay: 0.6 }}
+          transition={resolvedTheme === 'light' ? { delay: 0 } : { delay: 0.6 }}
           variants={variants.starThird}
         >
           <Star fill="#cdc6bd" width={14} />
         </motion.div>
         <div className={styles.pin}>
-          {currentTheme === 'light' ? (
+          {resolvedTheme === 'light' ? (
             <SunIcon className={styles.icon} />
           ) : (
             <MoonIcon className={styles.icon} />

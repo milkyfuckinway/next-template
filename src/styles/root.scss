@@ -22,7 +22,7 @@ $pantone-solar-power: #f4bf3a;
 $modded-pantone-phantom-darker: hsl(260 3% 14%);
 
 :root {
-  --dvh: 100vh;
+  --dvh: 100svh;
 
   // Palette
   --background-primary: #{$pantone-bright-white};
