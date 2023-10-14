@@ -1,14 +1,14 @@
 .switch {
   $toggler-height: 30px;
 
+  will-change: x, y;
+
   overflow: hidden;
   display: flex;
   flex-shrink: 0;
   align-items: center;
 
   color: var(--theme-icon);
-
-  transition: color $td;
 
   & .toggler {
     position: relative;
@@ -21,8 +21,6 @@
 
     background-color: var(--theme-switch-background);
     border-radius: 5000px;
-
-    transition: background-color $td;
   }
 
   & .background-icon {
@@ -49,7 +47,6 @@
     border-radius: 100%;
 
     transition:
-      background-color $td,
       left $td,
       transform $td;
   }

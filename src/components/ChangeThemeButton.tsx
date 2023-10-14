@@ -12,12 +12,13 @@ import styles from './ChangeThemeButton.module.scss';
 function ChangeThemeButton() {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
+  const [isLight, setisLight] = useState(resolvedTheme === 'light');
 
   useEffect(() => {
     setMounted(true);
     calculateDocumentHeight();
-  }, []);
-
+    setisLight(resolvedTheme === 'light');
+  }, [resolvedTheme]);
   if (!mounted) {
     return null;
   }
@@ -56,71 +57,67 @@ function ChangeThemeButton() {
   return (
     <button
       aria-label="Change theme."
-      className={clsx(styles.switch, resolvedTheme === 'light' ? styles.light : styles.dark)}
+      className={clsx(styles.switch, isLight ? styles.light : styles.dark)}
       onClick={onClick}
       type="button"
     >
       <motion.div className={styles.toggler} transition={{ delayChildren: 2 }}>
         <motion.div
-          animate={resolvedTheme === 'light' ? 'visible' : 'hidden'}
+          animate={isLight ? 'visible' : 'hidden'}
           className={styles['background-icon']}
           initial={false}
-          transition={resolvedTheme === 'light' ? { delay: 0.2 } : { delay: 0 }}
+          transition={isLight ? { delay: 0.2 } : { delay: 0 }}
           variants={variants.cloudFirst}
         >
           <Clound fill="#fff" width={10} />
         </motion.div>
         <motion.div
-          animate={resolvedTheme === 'light' ? 'visible' : 'hidden'}
+          animate={isLight ? 'visible' : 'hidden'}
           className={styles['background-icon']}
           initial={false}
-          transition={resolvedTheme === 'light' ? { delay: 0.4 } : { delay: 0 }}
+          transition={isLight ? { delay: 0.4 } : { delay: 0 }}
           variants={variants.cloudSecond}
         >
           <Clound fill="#fff" width={14} />
         </motion.div>
         <motion.div
-          animate={resolvedTheme === 'light' ? 'visible' : 'hidden'}
+          animate={isLight ? 'visible' : 'hidden'}
           className={styles['background-icon']}
           initial={false}
-          transition={resolvedTheme === 'light' ? { delay: 0.6 } : { delay: 0 }}
+          transition={isLight ? { delay: 0.6 } : { delay: 0 }}
           variants={variants.cloudThird}
         >
           <Clound fill="#fff" width={18} />
         </motion.div>
         <motion.div
-          animate={resolvedTheme === 'light' ? 'hidden' : 'visible'}
+          animate={isLight ? 'hidden' : 'visible'}
           className={styles['background-icon']}
           initial={false}
-          transition={resolvedTheme === 'light' ? { delay: 0 } : { delay: 0.2 }}
+          transition={isLight ? { delay: 0 } : { delay: 0.2 }}
           variants={variants.starFirst}
         >
           <Star fill="#cdc6bd" width={7} />
         </motion.div>
         <motion.div
-          animate={resolvedTheme === 'light' ? 'hidden' : 'visible'}
+          animate={isLight ? 'hidden' : 'visible'}
           className={styles['background-icon']}
           initial={false}
-          transition={resolvedTheme === 'light' ? { delay: 0 } : { delay: 0.4 }}
+          transition={isLight ? { delay: 0 } : { delay: 0.4 }}
           variants={variants.starSecond}
         >
           <Star fill="#cdc6bd" width={11} />
         </motion.div>
         <motion.div
-          animate={resolvedTheme === 'light' ? 'hidden' : 'visible'}
+          animate={isLight ? 'hidden' : 'visible'}
           className={styles['background-icon']}
           initial={false}
-          transition={resolvedTheme === 'light' ? { delay: 0 } : { delay: 0.6 }}
+          transition={isLight ? { delay: 0 } : { delay: 0.6 }}
           variants={variants.starThird}
         >
           <Star fill="#cdc6bd" width={14} />
         </motion.div>
         <div className={styles.pin}>
-          {resolvedTheme === 'light' ? (
-            <SunIcon className={styles.icon} />
-          ) : (
-            <MoonIcon className={styles.icon} />
-          )}
+          {isLight ? <SunIcon className={styles.icon} /> : <MoonIcon className={styles.icon} />}
         </div>
       </motion.div>
     </button>
