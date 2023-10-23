@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import Link from 'next/link';
 
-import ChangeThemeButton from '../ChangeThemeButton';
+import ChangeThemeButton from '../ui/ChangeThemeButton';
 import styles from './Header.module.scss';
 
 function Header() {

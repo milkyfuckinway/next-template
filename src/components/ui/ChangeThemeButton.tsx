@@ -1,7 +1,7 @@
 'use client';
 
-import { Clound, MoonIcon, Star, SunIcon } from '@/assets/svg/index.svg';
-import { calculateDocumentHeight } from '@/utils/helpers';
+import { Clound, MoonIcon, Star, SunIcon } from '@/shared/assets/svg/index.svg';
+import { calculateDocumentHeight } from '@/shared/utils/helpers';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
@@ -19,6 +19,7 @@ function ChangeThemeButton() {
     calculateDocumentHeight();
     setisLight(resolvedTheme === 'light');
   }, [resolvedTheme]);
+
   if (!mounted) {
     return null;
   }
@@ -26,11 +27,11 @@ function ChangeThemeButton() {
   const variants = {
     cloudFirst: {
       hidden: { x: 29, y: 50 },
-      visible: { x: 29, y: 0 },
+      visible: { x: 29, y: -4 },
     },
     cloudSecond: {
       hidden: { x: 28, y: 50 },
-      visible: { x: 28, y: 14 },
+      visible: { x: 28, y: 12 },
     },
     cloudThird: {
       hidden: { x: 39, y: 50 },
@@ -38,15 +39,15 @@ function ChangeThemeButton() {
     },
     starFirst: {
       hidden: { x: 8, y: -50 },
-      visible: { x: 8, y: 2 },
+      visible: { x: 8, y: -2 },
     },
     starSecond: {
       hidden: { x: 12, y: -50 },
-      visible: { x: 12, y: 14 },
+      visible: { x: 12, y: 10 },
     },
     starThird: {
       hidden: { x: 18, y: -50 },
-      visible: { x: 18, y: 2 },
+      visible: { x: 18, y: 0 },
     },
   };
 

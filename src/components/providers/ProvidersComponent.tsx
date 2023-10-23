@@ -3,7 +3,7 @@
 import { ThemeProvider } from 'next-themes';
 import { Provider } from 'react-redux';
 
-import { store } from './store';
+import { store } from '../../shared/store/store';
 
 function ProvidersComponent({ children }: { children: React.ReactNode }) {
   return (
