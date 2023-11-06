@@ -1,13 +1,30 @@
 .section {
-  width: 100%;
-}
+  $mobile-padding: 15px;
+  $desktop-padding: 30px;
 
-.container {
-  @include vp-md {
-    padding: 0 15px;
+  width: 100%;
+
+  & > .container,
+  & > .box {
+    max-width: $max-width;
+    margin: 0 auto;
   }
 
-  max-width: $max-width;
-  margin: 0 auto;
-  padding: 0 30px;
+  & > .container {
+    @include vp-md {
+      padding-right: $mobile-padding;
+      padding-left: $mobile-padding;
+    }
+
+    padding-right: $desktop-padding;
+    padding-left: $desktop-padding;
+  }
+
+  & > .box {
+    @include vp-md {
+      padding: $mobile-padding;
+    }
+
+    padding: $desktop-padding;
+  }
 }

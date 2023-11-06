@@ -1,0 +1,20 @@
+:where(body) {
+  background-color: var(--background-primary);
+}
+
+:where(p + p) {
+  margin: 0;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  margin: 0;
+}
+
+// *,
+// *::before,
+// *::after {
+//   &:not(svg, path) {
+//     outline: 1px inset rgb(0 183 255 / 0.1);
+//     outline-offset: -1px;
+//   }
+// }
