@@ -1,6 +1,6 @@
-import styles from './SpinnerComponent.module.scss';
+import styles from './index.module.scss';
 
-function SpinnerComponent() {
+export default function SpinnerComponent() {
   return (
     <div className={styles.loading}>
       <div className={styles.parent}>
@@ -20,5 +20,3 @@ function SpinnerComponent() {
     </div>
   );
 }
-
-export default SpinnerComponent;

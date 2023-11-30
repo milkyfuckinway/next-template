@@ -31,24 +31,39 @@ module.exports = {
         endOfLine: 'auto',
       },
     ],
+    // Allow to use irregular whitespace
+    'no-irregular-whitespace': ['error', { skipStrings: true, skipJSXText: true }],
+
+    // Allow to use default img html tag (for static)
+    '@next/next/no-img-element': 'off',
+
     // Disable require deprecated default props
     'react/require-default-props': 'off',
+
     // Allow to reassign props otherwise throw an error
     'no-param-reassign': ['error', { props: false }],
+
     // Only .tsx files for JSX
     'react/jsx-filename-extension': [1, { extensions: ['.tsx'] }],
+
     // Disable react in scope rule
     'react/react-in-jsx-scope': 'off',
+
     // Allows you to skip explicit return types in TypeScript
     '@typescript-eslint/explicit-module-boundary-types': 'off',
+
     // Allow unnamed functions
     'func-names': 'off',
+
     // Allow unary operators
     'no-plusplus': 'off',
+
     // Checks rules of Hooks
     'react-hooks/rules-of-hooks': 'error',
+
     // Checks effect dependencies
     'react-hooks/exhaustive-deps': 'error',
+
     // Allow to create input without label associated with 'for'
     'jsx-a11y/control-has-associated-label': [
       'off',
@@ -60,6 +75,7 @@ module.exports = {
         depth: 25,
       },
     ],
+
     // Allow to create label without input associated with 'for'
     'jsx-a11y/label-has-associated-control': [
       'error',

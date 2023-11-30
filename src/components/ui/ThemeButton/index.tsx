@@ -1,22 +1,20 @@
 'use client';
 
 import { Clound, MoonIcon, Star, SunIcon } from '@/shared/assets/svg/index.svg';
-import { calculateDocumentHeight } from '@/shared/utils/helpers';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 
-import styles from './ChangeThemeButton.module.scss';
+import styles from './index.module.scss';
 
-function ChangeThemeButton() {
+export default function ThemeButton() {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
   const [isLight, setisLight] = useState(resolvedTheme === 'light');
 
   useEffect(() => {
     setMounted(true);
-    calculateDocumentHeight();
     setisLight(resolvedTheme === 'light');
   }, [resolvedTheme]);
 
@@ -124,5 +122,3 @@ function ChangeThemeButton() {
     </button>
   );
 }
-
-export default ChangeThemeButton;

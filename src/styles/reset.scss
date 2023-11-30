@@ -13,15 +13,15 @@
 }
 
 :where(html, body) {
-  overflow-x: hidden;
   max-width: 100vw;
-  height: 100%;
+  min-height: 100%;
   margin: 0;
 }
 
 :where(html) {
   scroll-behavior: smooth;
 
+  -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -38,7 +38,7 @@
 }
 
 :where(h1, h2, h3, h4, h5, h6, p, a) {
-  line-height: 150%;
+  line-height: normal;
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
@@ -134,11 +134,13 @@
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus,
   &:-webkit-autofill:active {
-    background-clip: text;
-    box-shadow: none;
-    transition: background-color 100000s ease-in-out 0s;
+    box-shadow: 0 0 0 30px transparent inset !important;
 
-    -webkit-text-fill-color: inherit;
+    // If transparent
+    // -webkit-background-clip: text;
+    // -webkit-text-fill-color: #ffffff;
+    // transition: background-color 5000s ease-in-out 0s;
+    // box-shadow: inset 0 0 20px 20px #23232329;
   }
 }
 

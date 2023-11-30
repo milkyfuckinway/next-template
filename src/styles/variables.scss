@@ -3,12 +3,13 @@ $border-radius: 12px;
 $td: 0.35s;
 
 // Breakpoints
-$xs: 375px;
-$sm: 576px;
-$md: 768px;
-$lg: 998px;
-$xl: 1200px;
-$xxl: 1400px;
+$vp-768: 768px;
+$vp-1200: 1200px;
+$vp-1920: 1920px;
+
+// Retina
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;
 
 // Max width
-$max-width: 1900px;
+$max-width: 1200px;

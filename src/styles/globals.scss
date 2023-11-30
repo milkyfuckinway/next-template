@@ -1,20 +1,28 @@
+// *,
+// *::before,
+// *::after {
+//   &:not(svg, path) {
+//     outline: 1px inset rgb(247 0 255 / 0.25);
+//     outline-offset: -1px;
+//   }
+// }
+
 :where(body) {
+  overflow-x: hidden;
+
+  min-height: var(--dvh);
+
+  font-family: var(--eesti);
+  color: var(--text-primary);
+
   background-color: var(--background-primary);
+}
+
+:where(h1, h2, h3, h4, h5, h6, p, a) {
+  margin: 0;
+  line-height: normal;
 }
 
 :where(p + p) {
   margin: 0;
 }
-
-:where(h1, h2, h3, h4, h5, h6) {
-  margin: 0;
-}
-
-// *,
-// *::before,
-// *::after {
-//   &:not(svg, path) {
-//     outline: 1px inset rgb(0 183 255 / 0.1);
-//     outline-offset: -1px;
-//   }
-// }

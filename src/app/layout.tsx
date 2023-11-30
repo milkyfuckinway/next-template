@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 
+import FooterComponent from '@/components/base/Footer';
 import Header from '@/components/base/Header';
 import ProvidersComponent from '@/components/providers/ProvidersComponent';
 import '@/styles/index.scss';
@@ -22,16 +23,12 @@ const EestiFont = localFont({
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      className={clsx(EestiFont.variable)}
-      lang="en"
-      style={{ fontFamily: 'var(--eesti)' }}
-      suppressHydrationWarning
-    >
+    <html className={clsx(EestiFont.variable)} lang="en" suppressHydrationWarning>
       <body>
         <ProvidersComponent>
           <Header />
           <main>{children}</main>
+          <FooterComponent />
         </ProvidersComponent>
       </body>
     </html>

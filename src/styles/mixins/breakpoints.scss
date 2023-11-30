@@ -1,43 +1,30 @@
 // Breakpoints
-// $xs: 375px;
-// $sm: 576px;
-// $md: 768px;
-// $lg: 998px;
-// $xl: 1200px;
-// $xxl: 1400px;
+// $vp-768: 768px;
+// $vp-1200: 1200px;
 
-// @mixin vp-xxl {
-//   @media (max-width: $xxl) {
-//     @content;
-//   }
-// }
+// $retina-dpi: 144dpi;
+// $retina-dppx: 1.5dppx;
 
-// @mixin vp-xl {
-//   @media (max-width: $xl) {
-//     @content;
-//   }
-// }
-
-// @mixin vp-lg {
-//   @media (max-width: $lg) {
-//     @content;
-//   }
-// }
-
-@mixin vp-md {
-  @media (max-width: $md) {
+@mixin vp-767 {
+  @media (max-width: ($vp-768 - 1px)) {
     @content;
   }
 }
 
-// @mixin vp-sm {
-//   @media (max-width: $sm) {
-//     @content;
-//   }
-// }
+@mixin vp-1199 {
+  @media (max-width: ($vp-1200 - 1px)) {
+    @content;
+  }
+}
 
-// @mixin vp-xs {
-//   @media (max-width: $xs) {
-//     @content;
-//   }
-// }
+@mixin vp-1919 {
+  @media (max-width: ($vp-1920 - 1px)) {
+    @content;
+  }
+}
+
+@mixin retina {
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    @content;
+  }
+}

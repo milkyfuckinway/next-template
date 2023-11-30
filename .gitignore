@@ -37,3 +37,6 @@ next-env.d.ts
 
 # pocketbase
 pb_data
+
+tmp/*.*
+secrets
