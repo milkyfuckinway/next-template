@@ -1,0 +1,6 @@
+@function rsz($padding: 32px, $columns: 1, $coefficient, $gap: 5vw) {
+  @return calc(
+    (((100vw - $gap * ($columns - 1) - var(--scrollbar-width) - $padding * 2) * 0.01) / $columns) *
+      $coefficient
+  );
+}

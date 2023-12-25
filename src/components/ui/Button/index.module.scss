@@ -1,0 +1,27 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 50px;
+  padding: 10px;
+
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+
+  label + & {
+    margin-top: 20px;
+  }
+
+  // &:hover,
+  // &:focus-visible {
+  // }
+
+  // &:disabled {
+  // }
+
+  // &:active:not(:disabled) {
+  // }
+}

@@ -10,11 +10,11 @@
   "css.validate": false,
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "editor.codeActionsOnSave": {
-    "source.formatDocument": true,
-    "source.organizeImports": true,
-    "source.fixAll": true,
-    "source.fixAll.eslint": true,
-    "source.fixAll.stylelint": true
+    "source.formatDocument": "explicit",
+    "source.organizeImports": "explicit",
+    "source.fixAll": "explicit",
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.detectIndentation": false,
@@ -47,8 +47,8 @@
   "explorer.fileNesting.patterns": {
     "*.jsx": "${capture}.js, ${capture}.module.css, ${capture}.module.scss",
     "*.tsx": "${capture}.ts, ${capture}.module.css, ${capture}.module.scss",
-    "index.jsx": "data.ts, helpers.ts",
-    "index.tsx": "data.ts, helpers.ts",
+    "index.jsx": "data.ts, data.tsx, helpers.ts, helpers.tsx, mock.ts, mock.tsx",
+    "index.tsx": "data.ts, data.tsx, helpers.ts, helpers.tsx, mock.ts, mock.tsx",
     "index.svg.ts": "*.svg",
     "store.ts": "*.slice.ts",
     "package.json": "commitlint.config.ts, capacitor.config.ts, Contributing.md, .env.test, .env.sample, .eslintrc.js, .env.local, .env.production, .env.development, .env, .editorconfig, .eslintignore, .eslintrc, .eslintrc.json, .eslintrc.yml, .gitattributes, .gitignore, .gitlab-ci.yml, .lintstagedrc.json, .lintstagedrc.yml, LICENSE, .nvmrc, .ncurc.json, next-env.d.ts, next.config.js, postcss.config.js, .prettierrc.json, pocketbase.exe, .prettierignore, .prettierrc, package-lock.json, PRIVACY.md, requirements.md, Readme.md, .stylelintignore, .stylelintrc, tailwind.config.js, tsconfig.json, vite.config.ts, webpack.config.js, yarn.lock"
@@ -66,6 +66,7 @@
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "typescript.tsdk": "node_modules\\typescript\\lib",
   "vs-code-prettier-eslint.prettierLast": false,
+  "terminal.integrated.scrollback": 2000,
   "workbench.colorTheme": "One Monokai",
   "workbench.iconTheme": "icons",
   "workbench.startupEditor": "none",

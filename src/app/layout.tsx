@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
-import FooterComponent from '@/components/base/Footer';
+import Providers from '@/components/Provider';
+import Footer from '@/components/base/Footer';
 import Header from '@/components/base/Header';
-import ProvidersComponent from '@/components/providers/ProvidersComponent';
 import '@/styles/index.scss';
 import clsx from 'clsx';
 import localFont from 'next/font/local';
@@ -25,11 +25,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html className={clsx(EestiFont.variable)} lang="en" suppressHydrationWarning>
       <body>
-        <ProvidersComponent>
+        <Providers>
           <Header />
           <main>{children}</main>
-          <FooterComponent />
-        </ProvidersComponent>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

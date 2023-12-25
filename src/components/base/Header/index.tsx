@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import styles from './index.module.scss';
 
-function Header() {
+export default function HeaderComponent() {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -15,5 +15,3 @@ function Header() {
     </header>
   );
 }
-
-export default Header;

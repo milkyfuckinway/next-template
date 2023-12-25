@@ -17,3 +17,5 @@ declare namespace JSX {
     };
   }
 }
+
+declare module '@mona-health/react-input-mask';

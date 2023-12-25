@@ -6,11 +6,18 @@
 //     outline-offset: -1px;
 //   }
 // }
+:where([data-overflow]) {
+  overflow: hidden;
+}
+
+:where(html, .custom-scrollbar) {
+  @include scrollbar;
+}
 
 :where(body) {
   overflow-x: hidden;
 
-  min-height: var(--dvh);
+  min-height: var(--document-height);
 
   font-family: var(--eesti);
   color: var(--text-primary);

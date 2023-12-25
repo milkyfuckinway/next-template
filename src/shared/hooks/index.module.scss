@@ -1,0 +1,43 @@
+.swiper {
+  width: 100%;
+  min-width: 0;
+}
+
+.swiper__wrapper {
+  width: 100% !important;
+}
+
+.swiper__controls {
+  display: flex;
+  margin-top: 30px;
+}
+
+.swiper__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  color: #8795bd;
+
+  border: none;
+
+  &:disabled {
+    color: #d3d9e9;
+  }
+
+  &:focus-visible {
+    color: #5f709f;
+    outline: none;
+  }
+
+  &--prev {
+    transform: rotate(-90deg);
+  }
+
+  &--next {
+    transform: rotate(90deg);
+  }
+}

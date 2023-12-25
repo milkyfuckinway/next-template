@@ -1,0 +1,69 @@
+@mixin scrollbar(
+  $show-on-hover: false,
+  $track-color: #ffffff,
+  $track-hover-color: #ffffff,
+  $thumb-color: #a7b2d2,
+  $thumb-hover-color: #afbad8,
+  $thumb-active-color: #5f709f,
+  $scrollbar-width: 7px,
+  // $scrollbar-border-radius: 0,
+  // $scrollbar-border-coefficient: 5,
+  $hidden-corner: true,
+  $transition: 0.35s
+) {
+  scrollbar-color: $thumb-color $track-color;
+  scrollbar-width: thin;
+
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    width: $scrollbar-width;
+    height: $scrollbar-width;
+    background-color: $track-color;
+  }
+
+  &::-webkit-scrollbar-track,
+  &::-webkit-scrollbar-corner {
+    background-color: $track-color;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    // if need border
+    // border: calc(#{$scrollbar-width} / #{$scrollbar-border-coefficient}) solid transparent;
+    // border-radius: $scrollbar-border-radius;
+    background-color: $thumb-color;
+    background-clip: content-box;
+    transition: $transition;
+
+    @if $show-on-hover {
+      visibility: hidden;
+    }
+
+    &:hover {
+      background-color: $thumb-hover-color;
+    }
+
+    &:active {
+      background-color: $thumb-active-color;
+    }
+  }
+
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  &:hover,
+  &:focus {
+    scrollbar-color: $thumb-hover-color $track-hover-color;
+
+    &::-webkit-scrollbar-thumb {
+      visibility: visible;
+    }
+  }
+
+  @if $hidden-corner {
+    &::-webkit-scrollbar-corner {
+      display: none;
+    }
+  }
+}

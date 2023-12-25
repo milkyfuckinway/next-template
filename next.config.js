@@ -3,9 +3,10 @@
 const path = require('path');
 
 const nextConfig = {
+  reactStrictMode: false,
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
-    prependData: `@import "./src/styles/variables.scss"; @import "./src/styles/mixins.scss";`,
+    prependData: `@import "./src/styles/variables.scss"; @import "./src/styles/mixins.scss"; @import "./src/styles/functions.scss";`,
   },
   images: {
     formats: ['image/avif', 'image/webp'],
