@@ -2,26 +2,25 @@
 // *::before,
 // *::after {
 //   &:not(svg, path) {
-//     outline: 1px inset rgb(247 0 255 / 0.25);
+//     outline: 1px inset rgb(247 0 255 / 0.5);
 //     outline-offset: -1px;
 //   }
 // }
+
 :where([data-overflow]) {
   overflow: hidden;
 }
 
 :where(html, .custom-scrollbar) {
   @include scrollbar;
+
+  overflow-y: scroll;
 }
 
 :where(body) {
   overflow-x: hidden;
-
-  min-height: var(--document-height);
-
   font-family: var(--eesti);
   color: var(--text-primary);
-
   background-color: var(--background-primary);
 }
 

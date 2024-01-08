@@ -1,5 +1,3 @@
-'use client';
-
 import isDev from '@/shared/utils/isDev';
 
 import DevScripts from './DevScripts';

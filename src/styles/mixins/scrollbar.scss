@@ -1,13 +1,13 @@
 @mixin scrollbar(
   $show-on-hover: false,
-  $track-color: #ffffff,
-  $track-hover-color: #ffffff,
-  $thumb-color: #a7b2d2,
-  $thumb-hover-color: #afbad8,
-  $thumb-active-color: #5f709f,
+  $track-color: var(--track),
+  $track-hover-color: var(--track),
+  $thumb-color: var(--thumb),
+  $thumb-hover-color: var(--thumb),
+  $thumb-active-color: var(--thumb-active),
   $scrollbar-width: 7px,
-  // $scrollbar-border-radius: 0,
-  // $scrollbar-border-coefficient: 5,
+  $scrollbar-border-radius: 0,
+  $scrollbar-border-coefficient: 5,
   $hidden-corner: true,
   $transition: 0.35s
 ) {
@@ -28,11 +28,12 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    // if need border
-    // border: calc(#{$scrollbar-width} / #{$scrollbar-border-coefficient}) solid transparent;
-    // border-radius: $scrollbar-border-radius;
     background-color: $thumb-color;
     background-clip: content-box;
+
+    // border: calc(#{$scrollbar-width} / #{$scrollbar-border-coefficient}) solid transparent;
+    // border-radius: $scrollbar-border-radius;
+
     transition: $transition;
 
     @if $show-on-hover {

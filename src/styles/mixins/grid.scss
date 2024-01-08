@@ -1,0 +1,22 @@
+@mixin grid {
+  @include vp-2159 {
+    gap: 40px;
+  }
+
+  @include vp-1767 {
+    gap: 32px;
+  }
+
+  @include vp-1279 {
+    gap: 24px;
+  }
+
+  @include vp-767 {
+    gap: 16px;
+  }
+
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 48px;
+  width: 100%;
+}

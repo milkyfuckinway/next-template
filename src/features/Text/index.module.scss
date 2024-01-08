@@ -1,0 +1,14 @@
+.text_dynamic {
+  @include vp-1279 {
+    font-size: vw($size: 16, $breakpoint: 768);
+    line-height: vw($size: 22, $breakpoint: 768);
+  }
+
+  @include vp-767 {
+    font-size: vw($size: 16, $breakpoint: 360);
+    line-height: vw($size: 22, $breakpoint: 360);
+  }
+
+  font-size: 16px;
+  line-height: 22px;
+}

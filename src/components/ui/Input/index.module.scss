@@ -1,44 +1,69 @@
 .input {
+  $color-error: var(--accent);
+  $color-text: var(--text-primary);
+  $input-bg: var(--background-secondary);
+
   position: relative;
+
   display: flex;
   flex-direction: column;
   gap: 4px;
 
-  & :global(.MuiFormControl-root),
-  & :global(.MuiOutlinedInput-root),
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+
   & :global(.MuiInputBase-root),
-  fieldset {
-    margin: 0 !important;
-    padding: 0 !important;
+  & :global(.MuiInputBase-input[aria-hidden="true"]) {
+    @include mui-reset {
+      margin: 0;
+      padding: 0;
 
-    font-family: inherit !important;
+      font-family: inherit;
+      letter-spacing: normal;
 
-    opacity: 1 !important;
-    background-color: transparent !important;
-    border: 0 !important;
-    border-radius: 0 !important;
-    outline: 0 !important;
+      opacity: 1;
+      background-color: transparent;
+      border: 0;
+      border-color: transparent;
+      border-width: 0;
+      border-radius: 0;
+      outline: 0;
 
-    transition: none !important;
+      transition: none;
+    }
+
+    & fieldset {
+      display: none;
+    }
   }
 
-  & textarea {
-    padding: 14px 12px;
+  .input__label,
+  .error {
+    user-select: none;
   }
 
+  .error {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+
+    font-size: 14px;
+    line-height: 12px;
+    color: $color-error;
+  }
+
+  & textarea,
   & input {
-    padding: 0 12px;
-  }
-
-  & input,
-  & textarea {
     height: 50px;
+    padding: 14px 12px;
 
     font-family: inherit;
     font-size: 18px;
-    color: #ffffff;
+    color: var(--text-secondary);
 
-    background-color: #5c5c5c;
+    background-color: $input-bg;
     border: 0;
     outline: 0;
 
@@ -46,24 +71,46 @@
       color: #bbbbbb;
       opacity: 1;
     }
+  }
 
-    &:focus,
-    &:focus-visible {
-      outline: 0;
+  &.input__error {
+    & .input__label {
+      color: $color-error;
+    }
+
+    & textarea,
+    & input {
+      outline: 1px solid $color-error;
     }
   }
 
-  &__error {
-    pointer-events: none;
+  &.input__focused,
+  &:active {
+    & .input__label {
+      color: $color-text;
+      text-decoration-color: $color-text;
+    }
 
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    transform: translateY(100%);
+    & .error {
+      color: $color-text;
+      text-decoration-color: $color-text;
+    }
 
-    font-size: 12px;
-    font-weight: 900;
-    line-height: 12px;
-    color: #ff0000;
+    & input,
+    & textarea {
+      outline: 1px solid $color-text;
+    }
+  }
+
+  &:hover {
+    & .input__label {
+      text-decoration: underline;
+      text-decoration-color: $color-text;
+    }
+
+    &.input__error:not(.input__focused, &:active) .input__label {
+      text-decoration: underline;
+      text-decoration-color: $color-error;
+    }
   }
 }

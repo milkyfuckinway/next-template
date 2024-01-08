@@ -1,0 +1,27 @@
+@mixin mui-reset {
+  &,
+  &:global(.Mui-active),
+  &:global(.Mui-checked),
+  &:global(.Mui-completed),
+  &:global(.Mui-disabled),
+  &:global(.Mui-error),
+  &:global(.Mui-expanded),
+  &:global(.Mui-focusVisible),
+  &:global(.Mui-focused),
+  &:global(.Mui-readOnly),
+  &:global(.Mui-required),
+  &:global(.Mui-selected),
+  & :global(.Mui-active),
+  & :global(.Mui-checked),
+  & :global(.Mui-completed),
+  & :global(.Mui-disabled),
+  & :global(.Mui-error),
+  & :global(.Mui-expanded),
+  & :global(.Mui-focusVisible),
+  & :global(.Mui-focused),
+  & :global(.Mui-readOnly),
+  & :global(.Mui-required),
+  & :global(.Mui-selected) {
+    @content;
+  }
+}

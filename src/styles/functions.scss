@@ -1,6 +1,11 @@
-@function rsz($padding: 32px, $columns: 1, $coefficient, $gap: 5vw) {
-  @return calc(
-    (((100vw - $gap * ($columns - 1) - var(--scrollbar-width) - $padding * 2) * 0.01) / $columns) *
-      $coefficient
-  );
+@use "sass:math";
+
+@function vw($size, $breakpoint) {
+  $vw-context: $breakpoint * 0.01;
+
+  @return math.div($size, $vw-context) * 1vw;
+}
+
+@function vw-clamp($breakpoint, $size, $min, $max) {
+  @return clamp($min, vw($size: $size, $breakpoint: $breakpoint), $max);
 }

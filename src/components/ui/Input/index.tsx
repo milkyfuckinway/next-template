@@ -1,5 +1,7 @@
 import InputMask from '@mona-health/react-input-mask';
 import TextField from '@mui/material/TextField';
+import clsx from 'clsx';
+import { useState } from 'react';
 
 import styles from './index.module.scss';
 
@@ -30,8 +32,15 @@ export default function TextInput({
   type = 'text',
   value,
 }: InputProps) {
+  const [isFocused, setIsFocused] = useState(false);
   return (
-    <label className={styles.input}>
+    <label
+      className={clsx(
+        styles.input,
+        error ? styles.input__error : '',
+        isFocused ? styles.input__focused : ''
+      )}
+    >
       <span className={styles.input__label}>{label}</span>
       {multiline && type === 'text' && (
         <TextField
@@ -39,7 +48,9 @@ export default function TextInput({
           autoFocus={autoFocus}
           multiline
           name={name}
+          onBlur={() => setIsFocused(false)}
           onChange={onChange}
+          onFocusCapture={() => setIsFocused(true)}
           placeholder={placeholder}
           spellCheck="false"
           type={type}
@@ -50,7 +61,9 @@ export default function TextInput({
         <input
           autoComplete={autoComplete}
           name={name}
+          onBlur={() => setIsFocused(false)}
           onChange={onChange}
+          onFocusCapture={() => setIsFocused(true)}
           placeholder={placeholder}
           spellCheck="false"
           type={type}
@@ -62,14 +75,16 @@ export default function TextInput({
           autoComplete={autoComplete}
           mask={mask}
           name={name}
+          onBlur={() => setIsFocused(false)}
           onChange={onChange}
+          onFocusCapture={() => setIsFocused(true)}
           placeholder={placeholder}
           spellCheck="false"
           type={type}
           value={value}
         />
       )}
-      {error && <span className={styles.input__error}>{error}</span>}
+      {error && <span className={styles.error}>{error}</span>}
     </label>
   );
 }

@@ -1,9 +1,15 @@
+import ContainerComponent from '@/components/layout/Container';
+
 import styles from './index.module.scss';
 
 export default function FooterComponent() {
   return (
-    <footer className={styles.footer}>
-      <div className={styles.container}>2023</div>
-    </footer>
+    <ContainerComponent
+      containerClassName={styles.container}
+      maxWidth={false}
+      wrapperClassName={styles.footer}
+    >
+      <div className={styles.year}>2024</div>
+    </ContainerComponent>
   );
 }

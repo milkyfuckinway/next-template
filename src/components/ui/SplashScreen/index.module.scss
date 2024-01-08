@@ -1,0 +1,34 @@
+.container {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--background-primary);
+
+  & svg {
+    width: clamp(100px, 25vw, 500px);
+
+    & path {
+      transform-origin: center;
+      animation: 1s linear infinite rotate;
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    }
+  }
+}

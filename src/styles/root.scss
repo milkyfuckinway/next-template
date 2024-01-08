@@ -41,6 +41,11 @@ $modded-pantone-phantom-darker: hsl(260 3% 14%);
   --list-background: #{$pantone-bright-cobalt};
   --progressbar: #{$pantone-dusk-blue};
   --selected: #{$pantone-dusk-blue};
+
+  // Scrollbar
+  --track: #{$pantone-bright-white};
+  --thumb: #{$pantone-twilight-blue};
+  --thumb-active: #{$pantone-solar-power};
 }
 
 :root[data-theme="dark"] {
@@ -60,4 +65,9 @@ $modded-pantone-phantom-darker: hsl(260 3% 14%);
   --list-background: #{$pantone-jet-black};
   --progressbar: #{$pantone-moonbeam};
   --selected: #{$modded-pantone-phantom-darker};
+
+  // Scrollbar
+  --track: #{$pantone-phantom};
+  --thumb: #{$modded-pantone-phantom-darker};
+  --thumb-active: #{$pantone-bright-white};
 }

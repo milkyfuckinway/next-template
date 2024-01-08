@@ -1,7 +1,8 @@
+import SplashScreen from '@/components/ui/SplashScreen';
 import { setHeight, setScrollbarWidth, setWidth, setY } from '@/shared/store/document.slice';
 import calculateScrollbarWidth from '@/shared/utils/scrollbar-width';
 import { useThrottle, useWindowSize } from '@reactuses/core';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { useWindowScroll } from 'react-use';
 
@@ -14,6 +15,18 @@ export default function GeneralScripts() {
   const throttledY = useThrottle(y, THROTTLE_TIME);
   const throttledHeight = useThrottle(height, THROTTLE_TIME);
   const throttledWidth = useThrottle(width, THROTTLE_TIME);
+
+  const SplashScreenRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (SplashScreenRef.current) {
+      setTimeout(() => {
+        if (SplashScreenRef.current) {
+          SplashScreenRef.current.remove();
+        }
+      }, 250);
+    }
+  }, []);
 
   useEffect(() => {
     const scrolbarWidth = calculateScrollbarWidth();
@@ -31,5 +44,5 @@ export default function GeneralScripts() {
     document.documentElement.style.setProperty('--document-height', `${throttledHeight}px`);
   }, [dispatch, throttledHeight]);
 
-  return null;
+  return <SplashScreen reference={SplashScreenRef} />;
 }

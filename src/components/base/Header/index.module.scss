@@ -1,19 +1,10 @@
 .header {
   color: var(--text-secondary);
   background-color: var(--background-secondary);
-}
 
-.container {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  align-items: center;
-  justify-content: space-between;
-
-  max-width: $max-width;
-  min-height: 80px;
-  margin: 0 auto;
-  padding: 20px;
+  .container {
+    justify-content: space-between;
+  }
 }
 
 .nav {

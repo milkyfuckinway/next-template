@@ -1,5 +1,3 @@
-'use client';
-
 import Links from './Links';
 import Scripts from './Scripts';
 

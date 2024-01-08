@@ -6,8 +6,8 @@ const getMedia = ({
   viewport: 'desktop' | 'mobile' | 'tablet';
 }) => {
   const mobileBreakpoints = '(min-width: 300px) and (max-width: 767px)';
-  const tabletBreakpoints = '(min-width: 768px) and (max-width: 1199px)';
-  const desktopBreakpoints = '(min-width: 1200px)';
+  const tabletBreakpoints = '(min-width: 768px) and (max-width: 1279px)';
+  const desktopBreakpoints = '(min-width: 1280px)';
   const lowDppx = '(max-resolution: 143dpi) and (max-resolution: 1.4dppx)';
   const highDppx = '(min-resolution: 144dpi) and (min-resolution: 1.5dppx';
 

@@ -1,0 +1,30 @@
+.wrapper {
+  width: 100%;
+}
+
+.container {
+  @include vp-767 {
+    padding: 32px 15px;
+  }
+
+  width: 100%;
+  margin: 0 auto;
+  padding: 32px;
+
+  &.max_width {
+    max-width: $max-width;
+  }
+
+  &.flex-row {
+    display: flex;
+  }
+
+  &.flex-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &.grid {
+    @include grid;
+  }
+}
